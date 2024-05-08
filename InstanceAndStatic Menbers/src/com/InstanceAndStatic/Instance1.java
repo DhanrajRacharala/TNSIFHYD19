@@ -2,11 +2,13 @@ package com.InstanceAndStatic;
 
 public class Instance1 {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Hello");
-		System.out.println("BYE");
-
+	int num = 10;
+	
+	public void display() {
+		System.out.println("Iam in void display");
 	}
-
+	
+	public int getInt(int val) {
+		return  val;
+	}
 }
