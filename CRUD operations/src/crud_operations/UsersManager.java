@@ -1,4 +1,4 @@
-package net.codejava;
+package crud_operations;
 
 import java.sql.*;
 
