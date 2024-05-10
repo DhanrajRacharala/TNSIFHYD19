@@ -18,7 +18,7 @@ public class EncapsulationGetterAndSetterMain {
 	
 		
 		
-		gs.setName("Suresh"); // sets name (public) as suresh 
+		gs.setName("Suresh"); // sets name (public) as  
 		System.out.println(gs.getName()); 
 		
 		gs.setAddress("Bangalore");
