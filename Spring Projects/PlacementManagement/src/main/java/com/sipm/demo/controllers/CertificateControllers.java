@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -46,6 +47,12 @@ public class CertificateControllers {
         cs.deleteCertificateById(id);
         return "Department deleted Successfully!!";
     }
+	
+	@PutMapping("/certificate/{id}") 
+	 public Certificate updateCertificateById(@PathVariable("id") Long id, @RequestBody
+	  Certificate certificate) { 
+		  return cs.updateCertificate(id,certificate); 
+	 }
 	
 	
 

@@ -3,6 +3,7 @@ package com.sipm.demo.service;
 
 
 import java.util.List;
+import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,8 +45,31 @@ public class CertificateServiceImpl implements CertificateService {
 		
 	}
 
+	@Override
+	public Certificate updateCertificate(Long id, Certificate certificate) {
+		
+	Certificate certificateDB = cr.findById(id).get();
+			
+			if(Objects.nonNull(certificate.getYear()) &&
+				       !"".equals(certificate.getYear())) {
+				           certificateDB.setYear(certificate.getYear());
+				       }
 	
+				      
+				       if(Objects.nonNull(certificate.getCollege()) &&
+				               !"".equalsIgnoreCase(certificate.getCollege())) {
+				           certificateDB.setCollege(certificate.getCollege());
+				       }
+	
+				       return cr.save(certificateDB);
+			
+			
+			
+		}
+		
+	}
 
 	
 
-}
+	
+
